@@ -158,8 +158,8 @@ function initParticles() {
         let directionX = (Math.random() * 0.6) - 0.3;
         let directionY = (Math.random() * 0.6) - 0.3;
         
-        // Use soft green particles
-        let color = `rgba(76, 175, 80, ${Math.random() * 0.3 + 0.15})`;
+        // Use soft green particles suitable for light background
+        let color = `rgba(46, 125, 50, ${Math.random() * 0.2 + 0.2})`;
 
         particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
     }
@@ -178,7 +178,7 @@ function connectParticles() {
             const maxDistance = 120;
             if (distance < maxDistance) {
                 opacityValue = 1 - (distance / maxDistance);
-                ctx.strokeStyle = `rgba(76, 175, 80, ${opacityValue * 0.08})`;
+                ctx.strokeStyle = `rgba(46, 125, 50, ${opacityValue * 0.12})`;
                 ctx.lineWidth = 1;
                 ctx.beginPath();
                 ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
