@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Oritta Industries India Pvt Ltd is launching soon. Boosting Trade & Commerce with advanced industrial solutions. Stay tuned for our grand digital launch.">
-    <meta name="keywords" content="Oritta, Oritta Industries, Oritta India, Raju Menon, Trade and Commerce, Coming Soon, Oritta India website">
+    <meta name="description" content="Oritta Industries India Pvt Ltd. Boosting Trade & Commerce. Coming Soon.">
     <meta name="author" content="Oritta Industries India Pvt Ltd">
     <meta property="og:title" content="Oritta Industries India | Coming Soon">
-    <meta property="og:description" content="We are crafting a state-of-the-art digital experience. Boosting Trade & Commerce.">
+    <meta property="og:description" content="Boosting Trade & Commerce. Our new website is coming soon.">
     <meta property="og:url" content="https://www.orittaindia.com">
     <meta property="og:type" content="website">
     
@@ -16,10 +15,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;600;700;800;900&family=Satisfy&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&family=Satisfy&display=swap" rel="stylesheet">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
@@ -31,186 +27,66 @@
     <!-- Main Container -->
     <div class="app-container">
         
-        <!-- Header -->
-        <header class="main-header">
-            <div class="header-content">
-                <!-- SVG Brand Badge -->
-                <div class="logo-wrapper">
-                    <svg viewBox="0 0 120 120" class="logo-badge" id="logo-badge-svg">
-                        <!-- Outer green circle -->
-                        <circle cx="60" cy="60" r="55" fill="none" stroke="var(--emerald-primary)" stroke-width="3" />
-                        <circle cx="60" cy="60" r="51" fill="none" stroke="var(--emerald-glow)" stroke-width="1" stroke-dasharray="2,2" />
-                        
-                        <!-- Curved Path for text ORITTA (Top) -->
-                        <!-- A semi-circle path going from left to right -->
-                        <path id="top-path" d="M 22 55 A 38 38 0 0 1 98 55" fill="none" />
-                        <!-- Curved Path for text Boosting Trade & Commerce (Bottom) -->
-                        <!-- A semi-circle path going from right to left (inverted for upright text reading) -->
-                        <path id="bottom-path" d="M 98 65 A 38 38 0 0 1 22 65" fill="none" />
-                        
-                        <text font-family="'Outfit', sans-serif" font-size="12" font-weight="900" fill="var(--emerald-primary)" letter-spacing="3.5">
-                            <textPath href="#top-path" startOffset="50%" text-anchor="middle">ORITTA</textPath>
-                        </text>
-                        
-                        <text font-family="'Satisfy', cursive" font-size="6.2" fill="var(--text-light)">
-                            <textPath href="#bottom-path" startOffset="50%" text-anchor="middle">Boosting Trade & Commerce</textPath>
-                        </text>
-                        
-                        <!-- Central Icon Group -->
-                        <g transform="translate(60, 61) scale(0.6)">
-                            <!-- Inner cogwheel gear -->
-                            <circle cx="0" cy="0" r="22" fill="none" stroke="var(--accent-orange)" stroke-width="2.5" stroke-dasharray="6,4" class="spinning-gear" />
-                            <!-- Central logo leaf/house design (Recreated clean shape) -->
-                            <path d="M -12 10 C -12 0, -2 -14, 0 -18 C 2 -14, 12 0, 12 10 C 12 16, 8 18, 0 18 C -8 18, -12 16, -12 10 Z" fill="var(--emerald-primary)" opacity="0.9" />
-                            <!-- Inner highlighting leaf shape -->
-                            <path d="M -7 9 C -7 2, -1 -8, 0 -11 C 1 -8, 7 2, 7 9 C 7 13, 4 14, 0 14 C -4 14, -7 13, -7 9 Z" fill="var(--emerald-light)" />
-                            <!-- Small core core dot -->
-                            <circle cx="0" cy="3" r="2.5" fill="var(--accent-gold)" />
-                        </g>
-                    </svg>
-                </div>
-                
-                <!-- MD Direct Contact Link -->
-                <a href="tel:+919513794612" class="quick-call-btn">
-                    <span class="pulse-icon"><i class="fa-solid fa-phone"></i></span>
-                    <span class="call-text">+91 95137 94612</span>
-                </a>
-            </div>
-        </header>
-
-        <!-- Main Body -->
-        <main class="main-content">
-            <!-- Glass Card Container -->
-            <div class="glass-card main-card">
-                
-                <!-- Badge indicating state -->
-                <div class="coming-soon-badge">
-                    <span class="badge-dot"></span>
-                    <span>UNDER CONSTRUCTION</span>
-                </div>
-
-                <!-- Oritta Wordmark Typography -->
-                <div class="brand-title-group">
-                    <h1 class="brand-title">
-                        O<span>r</span><span class="i-wrapper">&#305;<span class="flame-dot"></span></span><span>t</span><span>t</span><span>a</span>
-                    </h1>
-                    <p class="brand-subtitle">INDUSTRIES INDIA PVT LTD</p>
-                </div>
-
-                <h2 class="announcement-title">Something Extraordinary is Coming</h2>
-                <p class="announcement-desc">
-                    We are crafting a state-of-the-art trade and commerce platform to boost industries nationwide. Our digital portal is currently under active development.
-                </p>
-
-                <!-- Countdown Timer Container -->
-                <div class="countdown-container" id="countdown">
-                    <!-- Days -->
-                    <div class="countdown-segment">
-                        <div class="countdown-value" id="days">00</div>
-                        <div class="countdown-label">Days</div>
-                    </div>
-                    <!-- Hours -->
-                    <div class="countdown-segment">
-                        <div class="countdown-value" id="hours">00</div>
-                        <div class="countdown-label">Hours</div>
-                    </div>
-                    <!-- Minutes -->
-                    <div class="countdown-segment">
-                        <div class="countdown-value" id="minutes">00</div>
-                        <div class="countdown-label">Minutes</div>
-                    </div>
-                    <!-- Seconds -->
-                    <div class="countdown-segment">
-                        <div class="countdown-value" id="seconds">00</div>
-                        <div class="countdown-label">Seconds</div>
-                    </div>
-                </div>
-
-                <!-- Notify Me Subscription Section -->
-                <div class="notify-section">
-                    <h3>Get Notified At Launch</h3>
-                    <form id="notify-form" class="notify-form" novalidate>
-                        <div class="input-group">
-                            <i class="fa-regular fa-envelope input-icon"></i>
-                            <input type="email" id="email-input" placeholder="Enter your email address" required>
-                            <button type="submit" class="submit-btn">
-                                <span>Notify Me</span>
-                                <i class="fa-solid fa-arrow-right-long btn-icon"></i>
-                            </button>
-                        </div>
-                        <p class="form-feedback" id="form-feedback"></p>
-                    </form>
-                </div>
-
-            </div>
-
-            <!-- Side Card: MD Info & Quick Contact -->
-            <div class="glass-card contact-card">
-                <div class="card-header">
-                    <div class="md-avatar">
-                        <i class="fa-solid fa-user-tie"></i>
-                    </div>
-                    <div class="md-meta">
-                        <h3>Raju Menon</h3>
-                        <p>Managing Director</p>
-                    </div>
-                </div>
-                
-                <div class="divider"></div>
-                
-                <div class="contact-details">
-                    <a href="tel:+919513794612" class="contact-item">
-                        <div class="icon-holder"><i class="fa-solid fa-phone"></i></div>
-                        <div class="contact-info">
-                            <span class="label">Phone</span>
-                            <span class="value">+91 95137 94612</span>
-                        </div>
-                    </a>
+        <!-- Centered Coming Soon Content -->
+        <main class="coming-soon-wrapper">
+            
+            <!-- SVG Logo Badge -->
+            <div class="logo-container">
+                <svg viewBox="0 0 120 120" class="logo-badge" id="logo-badge-svg">
+                    <!-- Outer green circle -->
+                    <circle cx="60" cy="60" r="55" fill="none" stroke="var(--emerald-primary)" stroke-width="3" />
+                    <circle cx="60" cy="60" r="51" fill="none" stroke="var(--emerald-glow)" stroke-width="1" stroke-dasharray="2,2" />
                     
-                    <a href="mailto:info@orittaindia.com" class="contact-item">
-                        <div class="icon-holder"><i class="fa-solid fa-envelope"></i></div>
-                        <div class="contact-info">
-                            <span class="label">Email</span>
-                            <span class="value">info@orittaindia.com</span>
-                        </div>
-                    </a>
+                    <!-- Curved Path for text ORITTA (Top) -->
+                    <path id="top-path" d="M 22 55 A 38 38 0 0 1 98 55" fill="none" />
+                    <!-- Curved Path for text Boosting Trade & Commerce (Bottom) -->
+                    <path id="bottom-path" d="M 98 65 A 38 38 0 0 1 22 65" fill="none" />
+                    
+                    <text font-family="'Outfit', sans-serif" font-size="12" font-weight="900" fill="var(--emerald-primary)" letter-spacing="3.5">
+                        <textPath href="#top-path" startOffset="50%" text-anchor="middle">ORITTA</textPath>
+                    </text>
+                    
+                    <text font-family="'Satisfy', cursive" font-size="6.2" fill="var(--text-muted)">
+                        <textPath href="#bottom-path" startOffset="50%" text-anchor="middle">Boosting Trade & Commerce</textPath>
+                    </text>
+                    
+                    <!-- Central Icon Group -->
+                    <g transform="translate(60, 61) scale(0.6)">
+                        <!-- Inner cogwheel gear -->
+                        <circle cx="0" cy="0" r="22" fill="none" stroke="var(--accent-orange)" stroke-width="2.5" stroke-dasharray="6,4" class="spinning-gear" />
+                        <!-- Central logo leaf/house design -->
+                        <path d="M -12 10 C -12 0, -2 -14, 0 -18 C 2 -14, 12 0, 12 10 C 12 16, 8 18, 0 18 C -8 18, -12 16, -12 10 Z" fill="var(--emerald-primary)" opacity="0.9" />
+                        <!-- Inner highlighting leaf shape -->
+                        <path d="M -7 9 C -7 2, -1 -8, 0 -11 C 1 -8, 7 2, 7 9 C 7 13, 4 14, 0 14 C -4 14, -7 13, -7 9 Z" fill="var(--emerald-light)" />
+                        <!-- Small core dot -->
+                        <circle cx="0" cy="3" r="2.5" fill="var(--accent-gold)" />
+                    </g>
+                </svg>
+            </div>
+            
+            <!-- Brand Typography -->
+            <div class="brand-title-group">
+                <h1 class="brand-title">
+                    O<span>r</span><span class="i-wrapper">&#305;<span class="flame-dot"></span></span><span>t</span><span>t</span><span>a</span>
+                </h1>
+                <p class="brand-subtitle">INDUSTRIES INDIA PVT LTD</p>
+            </div>
 
-                    <div class="contact-item">
-                        <div class="icon-holder"><i class="fa-solid fa-globe"></i></div>
-                        <div class="contact-info">
-                            <span class="label">Official Domain</span>
-                            <span class="value">www.orittaindia.com</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="social-links">
-                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                </div>
+            <div class="minimal-divider"></div>
+
+            <div class="status-indicator">
+                <span class="indicator-dot"></span>
+                <span class="status-label">COMING SOON</span>
             </div>
 
         </main>
 
         <!-- Footer -->
-        <footer class="main-footer">
+        <footer class="minimal-footer">
             <p>&copy; 2026 Oritta Industries India Pvt Ltd. All Rights Reserved.</p>
             <p class="footer-tagline">Boosting Trade & Commerce</p>
         </footer>
-    </div>
-
-    <!-- Success Modal/Overlay for Form Submission -->
-    <div class="modal-overlay" id="success-modal">
-        <div class="glass-card success-card">
-            <div class="success-icon-wrapper">
-                <div class="success-ring"></div>
-                <i class="fa-solid fa-check checkmark"></i>
-            </div>
-            <h2>You're on the list!</h2>
-            <p>Thank you for subscribing. We will send you an exclusive invite as soon as the site is ready for launch.</p>
-            <button class="close-btn" id="close-modal-btn">Got It</button>
-        </div>
+        
     </div>
 
     <!-- Custom Script -->

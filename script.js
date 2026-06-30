@@ -3,7 +3,6 @@ const canvas = document.getElementById('particle-canvas');
 const ctx = canvas.getContext('2d');
 
 let particlesArray = [];
-let confettiArray = [];
 let mouse = {
     x: null,
     y: null,
@@ -96,53 +95,6 @@ class Particle {
     }
 }
 
-// Confetti Particle Class for Form Submission Success
-class ConfettiParticle {
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-        this.size = Math.random() * 6 + 4;
-        this.speedX = Math.random() * 8 - 4;
-        this.speedY = Math.random() * -10 - 5; // Launch upward
-        this.gravity = 0.3;
-        
-        // Randomly pick gold or emerald green
-        const colors = ['#4caf50', '#81c784', '#2e7d32', '#ffb74d', '#ff9800', '#ffe082'];
-        this.color = colors[Math.floor(Math.random() * colors.length)];
-        this.rotation = Math.random() * 360;
-        this.rotationSpeed = Math.random() * 10 - 5;
-        this.opacity = 1;
-        this.fadeSpeed = Math.random() * 0.01 + 0.008;
-    }
-
-    draw() {
-        ctx.save();
-        ctx.translate(this.x, this.y);
-        ctx.rotate((this.rotation * Math.PI) / 180);
-        ctx.fillStyle = this.color;
-        ctx.globalAlpha = this.opacity;
-        // Draw small rectangles or circles
-        if (Math.random() > 0.5) {
-            ctx.fillRect(-this.size / 2, -this.size / 2, this.size, this.size);
-        } else {
-            ctx.beginPath();
-            ctx.arc(0, 0, this.size / 2, 0, Math.PI * 2);
-            ctx.fill();
-        }
-        ctx.restore();
-    }
-
-    update() {
-        this.speedY += this.gravity;
-        this.x += this.speedX;
-        this.y += this.speedY;
-        this.rotation += this.rotationSpeed;
-        this.opacity -= this.fadeSpeed;
-        
-        this.draw();
-    }
-}
-
 // Initialise particles array
 function initParticles() {
     particlesArray = [];
@@ -189,13 +141,6 @@ function connectParticles() {
     }
 }
 
-// Trigger Confetti Blast from coordinates
-function triggerConfetti(x, y) {
-    for (let i = 0; i < 150; i++) {
-        confettiArray.push(new ConfettiParticle(x, y));
-    }
-}
-
 // Animation loop
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -208,142 +153,9 @@ function animate() {
     // Connect particles
     connectParticles();
 
-    // Update active confetti particles
-    for (let i = confettiArray.length - 1; i >= 0; i--) {
-        confettiArray[i].update();
-        if (confettiArray[i].opacity <= 0) {
-            confettiArray.splice(i, 1);
-        }
-    }
-
     requestAnimationFrame(animate);
 }
 
 // Run canvas setup
 resizeCanvas();
 animate();
-
-
-// --- Countdown Timer Code ---
-// Set Launch Date: August 15, 2026, 09:00 AM IST
-const targetLaunchDate = new Date('August 15, 2026 09:00:00').getTime();
-
-const daysVal = document.getElementById('days');
-const hoursVal = document.getElementById('hours');
-const minutesVal = document.getElementById('minutes');
-const secondsVal = document.getElementById('seconds');
-
-function updateCountdown() {
-    const now = new Date().getTime();
-    const difference = targetLaunchDate - now;
-
-    // If countdown is finished
-    if (difference <= 0) {
-        daysVal.innerText = '00';
-        hoursVal.innerText = '00';
-        minutesVal.innerText = '00';
-        secondsVal.innerText = '00';
-        clearInterval(countdownInterval);
-        return;
-    }
-
-    // Time calculations
-    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-    // Render values with padded leading zero
-    daysVal.innerText = days < 10 ? '0' + days : days;
-    hoursVal.innerText = hours < 10 ? '0' + hours : hours;
-    minutesVal.innerText = minutes < 10 ? '0' + minutes : minutes;
-    secondsVal.innerText = seconds < 10 ? '0' + seconds : seconds;
-}
-
-// Initial fire and run interval
-updateCountdown();
-const countdownInterval = setInterval(updateCountdown, 1000);
-
-
-// --- Notify Me Form & Modal Handling ---
-const notifyForm = document.getElementById('notify-form');
-const emailInput = document.getElementById('email-input');
-const formFeedback = document.getElementById('form-feedback');
-const successModal = document.getElementById('success-modal');
-const closeModalBtn = document.getElementById('close-modal-btn');
-const submitBtn = notifyForm.querySelector('.submit-btn');
-const submitBtnText = submitBtn.querySelector('span');
-const submitBtnIcon = submitBtn.querySelector('i');
-
-notifyForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const email = emailInput.value.trim();
-    
-    // Clear previous feedbacks
-    formFeedback.innerText = '';
-    formFeedback.className = 'form-feedback';
-
-    // Email verification regex
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-    if (!email) {
-        showFeedback('Please enter an email address.', 'error');
-        return;
-    }
-
-    if (!emailPattern.test(email)) {
-        showFeedback('Please enter a valid email address.', 'error');
-        return;
-    }
-
-    // Show loading state
-    submitBtn.disabled = true;
-    submitBtnText.innerText = 'Registering...';
-    submitBtnIcon.className = 'fa-solid fa-spinner fa-spin btn-icon';
-    emailInput.disabled = true;
-
-    // Simulate server side request
-    setTimeout(() => {
-        // Reset button states
-        submitBtn.disabled = false;
-        submitBtnText.innerText = 'Notify Me';
-        submitBtnIcon.className = 'fa-solid fa-arrow-right-long btn-icon';
-        emailInput.disabled = false;
-
-        // Display success state
-        emailInput.value = ''; // Reset input
-        
-        // Show modal
-        successModal.classList.add('active');
-        
-        // Trigger particle confetti from button position
-        const btnRect = submitBtn.getBoundingClientRect();
-        triggerConfetti(btnRect.left + btnRect.width / 2, btnRect.top + btnRect.height / 2);
-    }, 1500);
-});
-
-// Clear error on input change
-emailInput.addEventListener('input', () => {
-    if (formFeedback.classList.contains('error')) {
-        formFeedback.innerText = '';
-        formFeedback.className = 'form-feedback';
-    }
-});
-
-// Modal close action
-closeModalBtn.addEventListener('click', () => {
-    successModal.classList.remove('active');
-});
-
-// Close modal when clicking outer overlay
-successModal.addEventListener('click', (e) => {
-    if (e.target === successModal) {
-        successModal.classList.remove('active');
-    }
-});
-
-function showFeedback(message, type) {
-    formFeedback.innerText = message;
-    formFeedback.className = `form-feedback ${type}`;
-}
