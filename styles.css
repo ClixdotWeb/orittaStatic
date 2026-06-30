@@ -19,8 +19,9 @@ body {
     background-color: #000000;
     color: var(--text-white);
     font-family: var(--font-body);
-    min-height: 100vh;
-    overflow-x: hidden;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
     position: relative;
     display: flex;
     align-items: center;
@@ -61,10 +62,12 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
+    height: 100dvh;
     width: 100%;
     max-width: 600px;
     padding: 60px 24px;
+    overflow: hidden;
 }
 
 /* --- Centered Card content --- */
@@ -295,5 +298,37 @@ body {
     .cta-btn {
         padding: 14px 28px;
         font-size: 14px;
+    }
+}
+
+@media (max-height: 660px) {
+    .app-container {
+        padding: 20px 16px;
+    }
+    .teaser-card {
+        gap: 20px;
+    }
+    .coming-soon-heading {
+        margin: 5px 0;
+    }
+    .coming-text {
+        font-size: 38px;
+        margin-bottom: -20px;
+    }
+    .soon-text {
+        font-size: 68px;
+    }
+    .teaser-details {
+        gap: 4px;
+    }
+    .detail-text {
+        font-size: 16px;
+    }
+    .detail-subtext {
+        font-size: 14px;
+    }
+    .minimal-footer {
+        margin-top: 20px;
+        gap: 6px;
     }
 }
